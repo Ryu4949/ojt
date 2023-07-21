@@ -80,7 +80,7 @@ function App() {
       </div >
       <div className="game-info">
         <div className='status'>{status}</div>
-        <ol>{moves}</ol>
+        <ol style={{listStyle: 'noen'}}>{moves}</ol>
       </div>
     </div>
   );

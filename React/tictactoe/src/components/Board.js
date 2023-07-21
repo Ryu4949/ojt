@@ -12,7 +12,7 @@ const Board = ({squares, onClick}) => {
 
     // render() {
     return (
-    <div>
+    <div className="board-wrapper">
         <div className='board-row'>
             {renderSquare(0)}
             {renderSquare(1)}
