@@ -6,7 +6,7 @@ function App() {
   const [history, setHistory] = useState([{squares: Array(9).fill(null)}])
   const [xIsNext, setXIsNext] = useState(true);
   const [stepNumber, setStepNumber] = useState(0);
-  const [squares, setSquares] = useState(Array(9).fill(null));
+  // const [squares, setSquares] = useState(Array(9).fill(null));
 
   const calculateWinner = (squares) => {
     const lines = [
@@ -30,7 +30,7 @@ function App() {
 
   }
 
-  const current = history[history.length - 1];
+  const current = history[stepNumber];
   const winner = calculateWinner(current.squares);
   let status;
 
@@ -43,17 +43,16 @@ function App() {
   const handleClick = (i) => {
     const newHistory = history.slice(0, stepNumber + 1);
     const newCurrent = newHistory[newHistory.length - 1];
-    const newSquares = current.squares.slice();
+    const newSquares = newCurrent.squares.slice();
 
     if(calculateWinner(newSquares) || newSquares[i]) {
         return;
     }
     
     newSquares[i] = xIsNext? "X" : "O";
-    setHistory([...history, {squares: newSquares}]);
-
-    setSquares(newSquares);
+    setHistory([...newHistory, {squares: newSquares}]);
     setXIsNext(prev => !prev);
+    setStepNumber(newHistory.length)
   } 
 
   const moves = history.map((step, move) => {
@@ -63,7 +62,7 @@ function App() {
 
     return (
       <li key={move}>
-        <button>{desc}</button>
+        <button className="move-button" onClick={() => jumpTo(move)}>{desc}</button>
       </li>
     )
   })
