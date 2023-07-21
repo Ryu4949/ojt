@@ -2,37 +2,17 @@ import React, { useState } from 'react'
 import Square from './Square'
 import './Board.css';
 
-// export default class Board extends Component {
-const Board = () => {
-
-    // constructor(props) {
-    //     super(props);
-    //     state = {
-    //         squares: Array(9).fill(null)
-    //     }
-    // }
-
-    const [squares, setSquares] = useState(Array(9).fill(null));
-
-    // handleClick(i) {
-        // const squares = state.squares.slice();
-    const handleClick = (i) => {
-        const newSquares = squares.slice();
-        newSquares[i] = "X";
-        // setState({squares: squares});
-        setSquares(newSquares);
-    }
+const Board = ({squares, onClick}) => {
 
     const renderSquare = (i) => {
         return <Square value={squares[i]} 
-        onClick = {() => handleClick(i)} />
+        onClick={() => onClick(i)} />
     }
 
 
     // render() {
     return (
     <div>
-        <div className='status'>Next Player: X, O</div>
         <div className='board-row'>
             {renderSquare(0)}
             {renderSquare(1)}
