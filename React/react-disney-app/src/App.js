@@ -1,4 +1,5 @@
 import './App.css';
+import Banner from './components/Banner';
 import Nav from './components/Nav';
 import { styled } from 'styled-components'
 
@@ -6,6 +7,7 @@ const App = () => {
   return (
     <Container>
       <Nav />
+      <Banner/>
     </Container >
   )
 }

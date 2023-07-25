@@ -1,5 +1,5 @@
 import axios from "axios";
-import secret from "../../secrets.json";
+import secret from "../secrets.json";
 
 const instance = axios.create({
     baseURL: "https://api.themoviedb.org/3",
