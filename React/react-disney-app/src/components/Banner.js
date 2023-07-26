@@ -1,6 +1,7 @@
 import axios from '../api/axios'
 import React, { useEffect, useState } from 'react'
 import requests from '../api/request'
+import "./Banner.css";
 
 const Banner = () => {
 
@@ -24,6 +25,9 @@ const Banner = () => {
     setMovie(movieDetail);
   }
   
+  const truncate = (str, n) => {
+    return str?.length > n ? str.substring(0, n) + "..." : str;
+  }
 
   return (
     <header
@@ -48,7 +52,7 @@ const Banner = () => {
           }
         </div>
         <p className='banner__description'>
-          {movie.overview}
+          {truncate(movie.overview, 100)}
         </p>
       </div>
       <div className='banner__fadeBottom'></div>
