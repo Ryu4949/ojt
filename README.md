@@ -12,3 +12,5 @@
 |230719|OOP학습(~ part02_ch02_24)|spread operator, jsx key, map(~ part01_ch04_05)|
 |230721|OOP핵심(~ part02_ch03_03)|성능측정, react profiler(~ part01_ch05_03)|
 |230724|OOP핵심(~ part02_ch03_07)|styled components, axios(~ part02_ch01_09)|
+|230725|OOP핵심(~ part02_ch03_10)|useState, useEffect(~ part02_ch01_10)|
+|230726|OOP핵심(~ part02_ch03_16)|responsive design(~ part02_ch02_01)|
