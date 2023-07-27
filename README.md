@@ -14,3 +14,4 @@
 |230724|OOP핵심(~ part02_ch03_07)|styled components, axios(~ part02_ch01_09)|
 |230725|OOP핵심(~ part02_ch03_10)|useState, useEffect(~ part02_ch01_10)|
 |230726|OOP핵심(~ part02_ch03_16)|responsive design(~ part02_ch02_01)|
+|230727|OOP핵심(~ part02_ch03_끝)|grid css, usecallback(~ part02_ch02_08)|
