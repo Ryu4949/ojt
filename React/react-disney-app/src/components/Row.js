@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import axios from '../api/axios'
+import "./Row.css"
 
 const Row = ({title, id, fetchUrl}) => {
   const [movies, setMovies] = useState([])
+  const [modalOpen, setModalOpen] = useState(false);
 
   const fetchMovieData = useCallback(async() => {
     const response = await axios.get(fetchUrl);
@@ -14,7 +16,9 @@ const Row = ({title, id, fetchUrl}) => {
     fetchMovieData();
   }, [fetchMovieData])
 
-
+  const handleClick = (movie) => {
+    setModalOpen(true);
+  }
 
   return (
     <div>
