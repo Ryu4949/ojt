@@ -1,6 +1,6 @@
 package Part_02_03_OOP_Core.ch14;
 
-import Part_02_03_OOP_Core.ch11.Calc;
+import Part_02_03_OOP_Core.ch14.Calc;
 
 public abstract class Calculator implements Calc {
 

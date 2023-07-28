@@ -19,7 +19,7 @@ public class CompleteCalc extends Calculator {
         System.out.println("모두 구현했습니다.");
     }
 
-//    @Override
+    @Override
     public void description() {
         System.out.println("CompleteCalc overriding");
     }
