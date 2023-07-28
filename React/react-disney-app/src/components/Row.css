@@ -20,7 +20,7 @@
     visibility: hidden;
 }
 
-.slider__arrow_right{
+.slider__arrow-right{
     background-clip: content-box;
     padding: 20px 0;
     box-sizing: border-box;
@@ -53,6 +53,16 @@
 }
 
 .slider__arrow-left:hover {
+    background: rgba(20, 20, 20, 0.5);
+    transition: 400ms all ease-in-out;
+}
+
+.slider:hover .slider__arrow-right {
+    transition: 400ms all ease-in-out;
+    visibility: visible;
+}
+
+.slider__arrow-right:hover {
     background: rgba(20, 20, 20, 0.5);
     transition: 400ms all ease-in-out;
 }
