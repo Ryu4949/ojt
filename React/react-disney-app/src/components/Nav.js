@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import { styled } from 'styled-components'
 
 const Nav = () => {
   const [show, handleShow] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -26,11 +28,19 @@ const Nav = () => {
             src="/images/logo.svg"
             onClick={() => (window.Location.href="/")} />
         </Logo>
+
+        {pathname === "/" ? (<Login>Login</Login>) : <Input className='nav__input' type="text" placeholder="검색해주세요."/>}
     </NavWrapper>
   )
 }
 
 export default Nav
+
+const Login = styled.a`
+`;
+
+const Input = styled.input`
+`;
 
 const NavWrapper = styled.nav`
   position: fixed;
