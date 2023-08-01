@@ -1,9 +1,15 @@
 package food.foodlist.wishlist.entity;
 
 import food.foodlist.db.MemoryDbEntity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class WishListEntity extends MemoryDbEntity {
 
     private String title;                   // 장소명
