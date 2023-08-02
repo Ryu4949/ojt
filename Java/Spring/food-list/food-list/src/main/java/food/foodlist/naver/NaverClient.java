@@ -1,5 +1,7 @@
 package food.foodlist.naver;
 
+import food.foodlist.naver.dto.SearchImageReq;
+import food.foodlist.naver.dto.SearchImageRes;
 import food.foodlist.naver.dto.SearchLocalReq;
 import food.foodlist.naver.dto.SearchLocalRes;
 import org.springframework.beans.factory.annotation.Value;
@@ -54,8 +56,30 @@ public class NaverClient {
     }
 
 
-    public void searchImage(){
+    public SearchImageRes searchImage(SearchImageReq searchImageReq){
+        var uri = UriComponentsBuilder.fromUriString(naverImageSearchUrl)
+                .queryParams(searchImageReq.toMultiValueMap())
+                .build()
+                .encode()
+                .toUri();
 
+        var headers = new HttpHeaders();
+        headers.set("X-Naver-Client-Id", naverClientId);
+        headers.set("X-Naver-Client-Secret", naverClientSecret);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        var httpEntity = new HttpEntity<>(headers);
+        var responseType = new ParameterizedTypeReference<SearchImageRes>(){};
+
+
+        var responseEntity = new RestTemplate().exchange(
+                uri,
+                HttpMethod.GET,
+                httpEntity,
+                responseType
+        );
+
+        return responseEntity.getBody();
     }
 
 }
