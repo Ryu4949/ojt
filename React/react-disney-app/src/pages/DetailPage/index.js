@@ -16,10 +16,15 @@ const DetailPage = () => {
     fetchData();
   }, [movieId])
 
+  if(!movie) return null;
+
   return (
-    <div>
-      Detail Page
-    </div>
+    <section>
+      <img
+        className='modal__poster-img'
+        src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+        alt="img" />
+    </section>
   )
 }
 
