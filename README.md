@@ -18,3 +18,4 @@
 |230728|웹개발개론&GET API(~ part03_ch04_03)|react router dom(~ part02_ch02_11)|
 |230731|POST/PUT/DELETE, Object Mapper(~ part03_ch_04)|uselocation(~ part02_ch02_13)|
 |230801|맛집리스트 예제(part03_ch10_01 ~ 04)|useDebounce(~ part02_ch02_14)|
+|230802|맛집리스트 예제(~ part03_ch10 끝)|useParams, useRef(~ part02_ch02_16)| 
