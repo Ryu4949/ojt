@@ -31,7 +31,7 @@ public class WishListService {
 
             if(searchImageRes.getTotal() > 0) {
                 // 결과물 리턴
-                
+
             }
         }
     }
