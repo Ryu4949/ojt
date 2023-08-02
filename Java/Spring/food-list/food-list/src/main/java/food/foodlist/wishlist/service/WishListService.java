@@ -3,6 +3,7 @@ package food.foodlist.wishlist.service;
 import food.foodlist.naver.NaverClient;
 import food.foodlist.naver.dto.SearchImageReq;
 import food.foodlist.naver.dto.SearchLocalReq;
+import food.foodlist.wishlist.dto.WishListDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ public class WishListService {
 
     private final NaverClient naverClient;
 
-    public void search(String query) {
+    public WishListDto search(String query) {
 
         //지역검색
         var searchLocalReq = new SearchLocalReq();
@@ -21,18 +22,30 @@ public class WishListService {
         var searchLocalRes = naverClient.searchLocal(searchLocalReq);
 
         if(searchLocalRes.getTotal() > 0) {
-            var item = searchLocalRes.getItems().stream().findFirst().get();
+            var localItem = searchLocalRes.getItems().stream().findFirst().get();
 
-            var imageQuery = item.getTitle().replaceAll("<[^>]*>", "");
+            var imageQuery = localItem.getTitle().replaceAll("<[^>]*>", "");
             var searchImageReq = new SearchImageReq();
             searchImageReq.setQuery(imageQuery);
 
             var searchImageRes = naverClient.searchImage(searchImageReq);
 
             if(searchImageRes.getTotal() > 0) {
-                // 결과물 리턴
+                var imageItem = searchImageRes.getItems().stream().findFirst().get();
 
+                // 결과물 리턴
+                var result = new WishListDto();
+                result.setTitle(localItem.getTitle());
+                result.setCategory(searchLocalRes.getCategory());
+                result.setAddress(localItem.getAddress());
+                result.setRoadAddress(localItem.getRoadAddress());
+                result.setHomePageLink(localItem.getLink());
+                result.setImageLink(imageItem.getLink());
+
+                return result;
             }
         }
+
+        return new WishListDto();
     }
 }
