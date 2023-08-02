@@ -37,4 +37,10 @@ public class ApiController {
     public void delete(@PathVariable int index) {
         wishListService.delete(index);
     }
+
+    @PostMapping("/{index}")
+    public void addVisit(@PathVariable int index) {
+        wishListService.addVisit(index);
+    }
+
 }

@@ -103,6 +103,14 @@ public class WishListService {
         wishListRepository.deleteById(index);
     }
 
-    
+    public void addVisit(int index) {
+        var wishItem = wishListRepository.findById(index);
+        if(wishItem.isPresent()){
+            var item = wishItem.get();
+
+            item.setVisit(true);
+            item.setVisitCount(item.getVisitCount()+1);
+        }
+    }
 }
 
