@@ -1,5 +1,6 @@
 package com.example.validation.dto;
 
+import com.example.validation.annotation.YearMonth;
 import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ public class User {
     private String email;
     @Pattern(regexp = "^\\d{2,3}-\\d{3,4}-\\d{4}$", message = "핸드폰 번호의 양식과 맞지 않습니다. 01x-xxx(x)-xxxx")
     private String phoneNumber;
-    @Size(min = 6, max =6)
+    @YearMonth(pattern = "yyyyMM")
     private String reqYearMonth;
 
     public String getName() {
