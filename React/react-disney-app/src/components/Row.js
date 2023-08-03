@@ -41,6 +41,24 @@ const Row = ({title, id, fetchUrl}) => {
         loop={true} //loop 기능을 사용할 것인지
         navigation={true} // arrow 버튼 사용 유무
         pagination={{ clickable: true }} //
+        breakpoints={{
+          1378: {
+            slidesPerView: 6, //한번에 보이는 슬라이드 개수 
+            slidesPerGroup: 6,
+          },
+          998: {
+            slidesPerView: 5, //한번에 보이는 슬라이드 개수 
+            slidesPerGroup: 5,
+          },
+          625: {
+            slidesPerView: 4, //한번에 보이는 슬라이드 개수 
+            slidesPerGroup: 4,
+          },
+          0: {
+            slidesPerView: 3, //한번에 보이는 슬라이드 개수 
+            slidesPerGroup: 3,
+          },
+        }}
         >
           <Content id={id}>
             {movies.map(movie => (
