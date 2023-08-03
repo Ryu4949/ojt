@@ -16,8 +16,8 @@ public class User {
     private String email;
     @Pattern(regexp = "^\\d{2,3}-\\d{3,4}-\\d{4}$", message = "핸드폰 번호의 양식과 맞지 않습니다. 01x-xxx(x)-xxxx")
     private String phoneNumber;
-    @YearMonth(pattern = "yyyyMM")
-    private String reqYearMonth;
+    @YearMonth
+    private String reqYearMonth;    //yyyyMM
 
     public String getName() {
         return name;
@@ -59,17 +59,6 @@ public class User {
         this.reqYearMonth = reqYearMonth;
     }
 
-    @AssertTrue
-    public boolean isReqYearMonthValidation() {
-
-        try {
-            LocalDate localDate = LocalDate.parse(getReqYearMonth()+"01", DateTimeFormatter.ofPattern("yyyyMMdd"));
-        }catch (Exception e) {
-            return false;
-        }
-
-        return true;
-    }
 
     @Override
     public String toString() {
