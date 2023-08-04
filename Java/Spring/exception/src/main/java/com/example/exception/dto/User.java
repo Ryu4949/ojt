@@ -1,4 +1,4 @@
-package main.java.com.example.exception.dto;
+package com.example.exception.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
