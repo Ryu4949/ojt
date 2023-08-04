@@ -1,7 +1,12 @@
 package main.java.com.example.exception.dto;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class User {
 
+    @NotEmpty
+    @Size(min = 1, max = 10)
     private String name;
     private int age;
 
