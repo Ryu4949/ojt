@@ -1,6 +1,8 @@
 package main.java.com.example.exception.dto;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class User {
@@ -8,7 +10,10 @@ public class User {
     @NotEmpty
     @Size(min = 1, max = 10)
     private String name;
-    private int age;
+
+    @Min(1)
+    @NotNull
+    private Integer age;
 
     public String getName() {
         return name;
