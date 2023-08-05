@@ -5,21 +5,24 @@ const LoginPage = () => {
   return (
     <Container>
       <Content>
-        <Center>
-          <LogoOne src="/images/cta-logo-one.svg" alt="logo-one"></LogoOne>
-          <SignUpLink>지금 가입하기</SignUpLink>
-          <Description>
-            영화에 대한 프리미어 액세스를 얻으십시오.
-            디즈니 플러스 가격은 다음주부터 1000원 인상입니다.
-          </Description>
-          <LogoTwo src="/images/cta-logo-two.png" alt="logo-two"/>
-        </Center>
+          <Center>
+            <LogoOne src="/images/cta-logo-one.svg" alt="logo-one"></LogoOne>
+            <SignUpLink>지금 가입하기</SignUpLink>
+            <Description>
+              영화에 대한 프리미어 액세스를 얻으십시오.
+              디즈니 플러스 가격은 다음주부터 1000원 인상입니다.
+            </Description>
+            <LogoTwo src="/images/cta-logo-two.png" alt="logo-two"/>
+          </Center>
+        <BgImage />
       </Content>
     </Container>
   )
 }
 
 export default LoginPage
+
+
 
 const Container = styled.section`
 overflow: hidden;
@@ -90,3 +93,15 @@ vertical-align: bottom;
 width: 100%;
 `;
 
+const BgImage = styled.div`
+height: 100%;
+background-position: top;
+background-image: url("/images/login-background.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+z-index: -1;
+`;
