@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components'
-import {getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup} from 'firebase/auth';
+import {getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut} from 'firebase/auth';
 
 const Nav = () => {
   const [show, handleShow] = useState(false);
@@ -59,6 +59,13 @@ const Nav = () => {
       })
   }
 
+  const handleSignOut = () => {
+    signOut(auth).then(() => {
+      setUserData({});
+      navigate('/');
+    }).catch((error) => {console.log(error)})
+  }
+
   return (
     <NavWrapper show={show}>
         <Logo>
@@ -77,7 +84,7 @@ const Nav = () => {
           <SignOut>
               <UserImg src={userData.photoURL} alt={userData.displayName}/>
               <DropDown>
-                  <span>Sign Out</span>
+                  <span onClick={handleSignOut}>Sign Out</span>
               </DropDown>
           </SignOut>
         </>
