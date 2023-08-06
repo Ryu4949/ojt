@@ -10,7 +10,7 @@ const Nav = () => {
   const navigate = useNavigate();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState({});
 
   useEffect(() => {
 
@@ -24,7 +24,7 @@ const Nav = () => {
         navigate("/");
       }
     })
-  })
+  }, [auth, navigate, pathname])
   
 
 
@@ -34,8 +34,6 @@ const Nav = () => {
         window.removeEventListener("scroll", handleScroll)
     }
   }, [])
-
-  console.log()
 
   const handleScroll = () => {
     if(window.scrollY > 50) {
