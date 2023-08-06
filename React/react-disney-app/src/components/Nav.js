@@ -88,9 +88,17 @@ const Nav = () => {
 
 export default Nav
 
-const SignOut = styled.div``;
+const SignOut = styled.div`
+  position: relative;
+  height: 48px;
+  width: 48px;
+`;
 
-const UserImg = styled.div``;
+const UserImg = styled.img`
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+`;
 
 const DropDown = styled.div``;
 
