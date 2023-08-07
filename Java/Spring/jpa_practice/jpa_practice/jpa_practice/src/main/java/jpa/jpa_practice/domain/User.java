@@ -1,5 +1,8 @@
 package jpa.jpa_practice.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -9,7 +12,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Builder
+@Entity
 public class User {
+    @Id @GeneratedValue
+    private Long id;
     @NonNull
     private String name;
     @NonNull
