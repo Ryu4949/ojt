@@ -20,3 +20,4 @@
 |230801|맛집리스트 예제(part03_ch10_01 ~ 04)|useDebounce(~ part02_ch02_14)|
 |230802|맛집리스트 예제(~ part03_ch10 끝)|useParams, useRef(~ part02_ch02_16)|
 |230803|Springboot Validation(part03_ch06_01 ~ 02)|swiper(~ part02_ch02_끝)|
+|230804|Springboot Validation(~ part03_ch06_04)|firebase(~ part02_ch03_08)|
