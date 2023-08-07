@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 class MemberRepositoryTest {
     @Autowired
-    private UserRepository userRepository;
+    private MemberRepository memberRepository;
 
     @Test
     void crud() {
@@ -35,7 +35,7 @@ class MemberRepositoryTest {
 //        userRepository.deleteAll();
 //        userRepository.findAll().forEach(System.out::println);
 
-        userRepository.deleteAllInBatch();
-        userRepository.findAll().forEach(System.out::println);
+        memberRepository.deleteAllInBatch();
+        memberRepository.findAll().forEach(System.out::println);
     }
 }
