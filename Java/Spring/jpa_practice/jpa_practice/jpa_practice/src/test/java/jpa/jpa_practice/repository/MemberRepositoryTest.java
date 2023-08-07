@@ -1,20 +1,20 @@
 package jpa.jpa_practice.repository;
 
-import jpa.jpa_practice.domain.User;
+import jpa.jpa_practice.domain.Member;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
-class UserRepositoryTest {
+@Transactional
+class MemberRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
     @Test
     void crud() {
-        userRepository.save(new User());
+        userRepository.save(new Member());
 
         System.out.println(">>>" + userRepository.findAll());
     }

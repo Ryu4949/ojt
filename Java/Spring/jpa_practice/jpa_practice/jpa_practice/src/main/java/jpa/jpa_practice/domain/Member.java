@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 @Builder
 @Entity
-public class User {
+public class Member {
     @Id @GeneratedValue
     private Long id;
     @NonNull
