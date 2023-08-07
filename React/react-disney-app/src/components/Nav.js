@@ -4,6 +4,10 @@ import { styled } from 'styled-components'
 import {getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut} from 'firebase/auth';
 
 const Nav = () => {
+
+  const initialUserData = localStorage.getItem('UserData') ?
+  JSON.parse(localStorage.getItem('userData')) : {};
+
   const [show, handleShow] = useState(false);
   const { pathname } = useLocation();
   const [searchValue, setSearchValue] = useState("");
@@ -51,6 +55,7 @@ const Nav = () => {
       signInWithPopup(auth, provider)
       .then(result => {
         setUserData(result.user);
+        localStorage.setItem("userData", JSON.stringify(result.user));
       })
       .catch(error => {
         console.log(error);
