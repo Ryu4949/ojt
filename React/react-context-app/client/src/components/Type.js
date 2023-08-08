@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import Products from './Products';
 
 const Type = ({ orderType }) => {
 
@@ -18,6 +19,15 @@ const Type = ({ orderType }) => {
             console.log(error);
         }
     }
+
+    const ItemComponent = orderType === "products" ? Products : null;
+
+    const optionItems = items.map(item => (
+        <ItemComponent 
+        key={item.name}
+        name={item.name}
+        imagePath={item.imagePath} />
+    ))
 
 
     return (
