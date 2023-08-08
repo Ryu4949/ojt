@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Products from './Products';
+import Options from './Options';
 
 const Type = ({ orderType }) => {
 
@@ -20,7 +21,7 @@ const Type = ({ orderType }) => {
         }
     }
 
-    const ItemComponent = orderType === "products" ? Products : null;
+    const ItemComponent = orderType === "products" ? Products : Options;
 
     const optionItems = items.map(item => (
         <ItemComponent 
