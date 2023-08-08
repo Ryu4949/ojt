@@ -1,9 +1,13 @@
 import React from 'react'
+import Type from '../../components/Type'
 
 const OrderPage = () => {
   return (
     <div>
-      Order Page
+        <h1>Travel Products</h1>
+        <div>
+            <Type orderType="products"></Type>
+        </div>
     </div>
   )
 }
