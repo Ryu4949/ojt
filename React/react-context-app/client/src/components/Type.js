@@ -40,7 +40,7 @@ const Type = ({ orderType }) => {
             style={{ display: 'flex',
             flexDirection: orderType === "options" ? "column" : "row" 
             }}>
-                Items
+                {optionItems}
         </div>
     </div>
   )
