@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
 const Type = ({ orderType }) => {
-    console.log('orderType', orderType);
-  return (
+
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        loadItems(orderType);
+    }, [orderType])
+
+    const loadItems = async () => {
+        try {
+            const response = await axios.get(`http://localhost:4000/${orderType}`);
+            setItems(response.data);
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    return (
     <div>
         <h2>주문 종류</h2>
         <p>하나의 가격</p>
