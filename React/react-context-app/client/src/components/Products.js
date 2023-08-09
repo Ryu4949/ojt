@@ -1,7 +1,14 @@
 import React from 'react'
 
-const Products = ({ name, imagePath }) => {
+const Products = ({ name, imagePath, updateItemCount }) => {
+
     console.log(name, imagePath)
+
+    const handleChange = (event) => {
+      const currentValue = event.target.value;
+      updateItemCount(name, currentValue);
+
+    }
   return (
     <div style={{ textAlign: 'center' }}>
         <img 
