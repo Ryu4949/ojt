@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { OrderContext } from '../../context/OrderContext';
 
-const SummaryPage = () => {
+const SummaryPage = ({ setStep }) => {
     const [checked, setChecked] = useState(false);
     const [orderDetails] = useContext(OrderContext);
 
@@ -26,6 +26,11 @@ const SummaryPage = () => {
       )
     }
 
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      setStep(2);
+    }
+
     return (
       <div>
         <h1>주문 확인</h1>
@@ -35,7 +40,7 @@ const SummaryPage = () => {
         </ul>
 
         {optionsDisplay}
-        
+
         <form>
           <input 
               type="checkbox"
