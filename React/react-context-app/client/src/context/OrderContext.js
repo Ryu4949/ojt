@@ -1,6 +1,6 @@
 import { createContext, useMemo, useState } from "react";
 
-const orderContext = createContext();
+export const OrderContext = createContext();
 
 export function OrderContextProvider(props) {
 
