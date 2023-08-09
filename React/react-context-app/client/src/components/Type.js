@@ -11,7 +11,7 @@ const Type = ({ orderType }) => {
     const [error, setError] = useState(false);
     const [orderData, updateItemCount] = useContext(OrderContext);
 
-    
+
 
     useEffect(() => {
         loadItems(orderType);
@@ -33,7 +33,8 @@ const Type = ({ orderType }) => {
         <ItemComponent 
         key={item.name}
         name={item.name}
-        imagePath={item.imagePath} />
+        imagePath={item.imagePath}
+        updateItemCount={(itemName, newItemCount) => updateItemCount(itemName, newItemCount, orderType)} />
     ))
 
     if (error) {
