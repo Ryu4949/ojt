@@ -22,10 +22,12 @@ console.log('store.getState', store.getState());
 
 const render = () => root.render(
   <React.StrictMode>
-    <App 
-    value={store.getState()}
-    onIncrement={() => store.dispatch({type: "INCREMENT"})}
-    onDecrement={() => store.dispatch({type: "DECREMENT"})} />
+    <Provider store={store}>
+      <App 
+      value={store.getState()}
+      onIncrement={() => store.dispatch({type: "INCREMENT"})}
+      onDecrement={() => store.dispatch({type: "DECREMENT"})} />
+    </Provider>
   </React.StrictMode>
 );
 render();
