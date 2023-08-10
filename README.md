@@ -22,4 +22,5 @@
 |230803|Springboot Validation(part03_ch06_01 ~ 02)|swiper(~ part02_ch02_끝)|
 |230804|Springboot Validation(~ part03_ch06_04)|firebase(~ part02_ch03_08)|
 |230807|JPA Repository Interface(~ part04-1_02_02)|react context 기본 개념(~ part03_ch01_04)|
-|230808|Spring Data JPA(~ part04_01_01)|context를 활용한 프로젝트 실습(~ part03_ch01_08)|
+|230808|Spring Data JPA(~ part04_01_01)|context를 활용한 프로젝트 실습(1)(~ part03_ch01_08)|
+|230809|JPA 기본기(~ part04_ch01_04)|context를 활용한 프로젝트 실습(2)(~ part03_ch01_끝)|
