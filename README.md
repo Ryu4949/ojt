@@ -24,3 +24,4 @@
 |230807|JPA Repository Interface(~ part04-1_02_02)|react context 기본 개념(~ part03_ch01_04)|
 |230808|Spring Data JPA(~ part04_01_01)|context를 활용한 프로젝트 실습(1)(~ part03_ch01_08)|
 |230809|JPA 기본기(~ part04_ch01_04)|context를 활용한 프로젝트 실습(2)(~ part03_ch01_끝)|
+|230810|Repository, Entity(~ part04_ch02_02)|redux (1) (~ part03_ch02_05)|
