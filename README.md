@@ -26,3 +26,4 @@
 |230809|JPA 기본기(~ part04_ch01_04)|context를 활용한 프로젝트 실습(2)(~ part03_ch01_끝)|
 |230810|Repository, Entity(~ part04_ch02_02)|redux (1) (~ part03_ch02_05)|
 |230811|datasource, transaction manager(~ part04_ch02_04)|redux (2) (~ part03_ch02_07)|
+|230814|spring security(~ part05_ch02_05)|redux toolkit (~ part03_ch02_09)|
