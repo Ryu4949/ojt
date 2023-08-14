@@ -23,7 +23,7 @@ public class UserService {
         return userRepository.save(new User(username, passwordEncoder.encode(password), "ROLE_USER"));
     }
 
-    public User findByUserName(String username) {
+    public User findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 }
