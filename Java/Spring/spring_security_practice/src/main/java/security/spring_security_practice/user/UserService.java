@@ -17,13 +17,13 @@ public class UserService {
             String username,
             String password
     ) {
-        if (userRepository.findByUserName(username) != null) {
+        if (userRepository.findByUsername(username) != null) {
             throw new AlreadyRegisteredUserException();
         }
         return userRepository.save(new User(username, passwordEncoder.encode(password), "ROLE_USER"));
     }
 
     public User findByUserName(String username) {
-        return userRepository.findByUserName(username);
+        return userRepository.findByUsername(username);
     }
 }

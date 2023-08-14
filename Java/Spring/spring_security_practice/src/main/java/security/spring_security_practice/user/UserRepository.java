@@ -5,5 +5,5 @@ import security.spring_security_practice.user.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User findByUserName(String name);
+    User findByUsername(String name);
 }
