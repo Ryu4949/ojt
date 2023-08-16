@@ -1,5 +1,6 @@
 import getRandomAddress from "./randomAddress"
 import { nanoid } from "nanoid";
+import './styles/main.scss';
 
 
 // webpack 설치 없이 실행하면 오류 발생
