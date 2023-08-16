@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components'
 import {getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut} from 'firebase/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../store/userSlice';
 
 const Nav = () => {
 
@@ -14,7 +16,9 @@ const Nav = () => {
   const navigate = useNavigate();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-  const [userData, setUserData] = useState(initialUserData);
+
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.user)
 
   useEffect(() => {
 
@@ -55,6 +59,13 @@ const Nav = () => {
       signInWithPopup(auth, provider)
       .then(result => {
         setUserData(result.user);
+
+        dispatch(setUser({
+          id: result.user.uid,
+          email: result.user.email,
+          displayName: result.user.displayName,
+          photoURL: result.user.photoURL
+        }))
         localStorage.setItem("userData", JSON.stringify(result.user));
       })
       .catch(error => {
