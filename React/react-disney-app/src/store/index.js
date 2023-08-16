@@ -1,6 +1,5 @@
-import { configureStore } from "@./userSlice";
 import userReducer from './userSlice';
-import { combineReducers, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 
