@@ -16,6 +16,7 @@ const Nav = () => {
   const navigate = useNavigate();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
+  const [userData, setUserData] = useState({});
 
   const dispatch = useDispatch();
   const user = useSelector(state => state.user)
@@ -130,7 +131,7 @@ const SignOut = styled.div`
   width: 48px;
   display: flex;
   cursor: pointer;
-  aligh-items: center;
+  align-items: center;
   justify-content: center;
 
   &:hover {
