@@ -11,6 +11,7 @@ import security.spring_security_practice.user.entity.User;
 
 import java.time.LocalDateTime;
 
+@Entity
 @Table
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

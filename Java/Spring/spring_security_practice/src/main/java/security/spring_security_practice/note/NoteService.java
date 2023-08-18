@@ -1,6 +1,7 @@
 package security.spring_security_practice.note;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NoteService {
 
+    @Autowired
     private final NoteRepository noteRepository;
 
     @Transactional(readOnly = true)
