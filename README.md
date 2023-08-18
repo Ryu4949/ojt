@@ -27,4 +27,5 @@
 |230810|Repository, Entity(~ part04_ch02_02)|redux (1) (~ part03_ch02_05)|
 |230811|datasource, transaction manager(~ part04_ch02_04)|redux (2) (~ part03_ch02_07)|
 |230814|spring security(~ part05_ch02_05)|redux toolkit (~ part03_ch02_09)|
-|230816|security filter(1) (~ part05_ch03_06)|redux 적용, webpack (~ part06_ch01_06)|
+|230816|security filter(1) (~ part05_ch03_06)|redux 적용, webpack(1) (~ part06_ch01_06)|
+|230818|security filter(2), security config (~ part05_ch04_03)|webpack(2) (~ part06_ch01_13)|
