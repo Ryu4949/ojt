@@ -30,5 +30,13 @@ module.exports = {
             filename: 'index.html',
             template: 'src/index.html'
         })
-    ]
+    ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist')
+        },
+        compress: true,
+        port: 3000,
+        open: true
+    }
 }
