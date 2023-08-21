@@ -1,4 +1,4 @@
-package security.spring_security_practice.notice;
+package security.spring_security_practice.note;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,17 +9,13 @@ import org.springframework.security.test.context.support.TestExecutionEvent;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
-import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
-import security.spring_security_practice.note.NoteRepository;
 import security.spring_security_practice.note.entity.Note;
 import security.spring_security_practice.user.UserRepository;
 import security.spring_security_practice.user.entity.User;
 
-import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
@@ -27,11 +23,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
 @SpringBootTest
 @ActiveProfiles(profiles = "test")
 @Transactional
-class NoticeControllerTest {
+class NoteControllerTest {
 
     @Autowired
     private UserRepository userRepository;
@@ -59,16 +54,15 @@ class NoticeControllerTest {
     }
 
     @Test
-    // WithUserDetails 로 테스트 하는 방법
     @WithUserDetails(
-            value = "user123", // userDetailsService를 통해 가져올 수 있는 유저
-            userDetailsServiceBeanName = "userDetailsService", // UserDetailsService 구현체의 Bean
-            setupBefore = TestExecutionEvent.TEST_EXECUTION // 테스트 실행 직전에 유저를 가져온다.
+            value = "user123",
+            userDetailsServiceBeanName = "userDetailsService",
+            setupBefore = TestExecutionEvent.TEST_EXECUTION
     )
     void getNote_인증있음() throws Exception {
         mockMvc.perform(
-                        get("/note")
-                ).andExpect(status().isOk())
+                get("/note")
+        ).andExpect(status().isOk())
                 .andExpect(view().name("note/index"))
                 .andDo(print());
     }
@@ -76,11 +70,11 @@ class NoticeControllerTest {
     @Test
     void postNote_인증없음() throws Exception {
         mockMvc.perform(
-                        post("/note").with(csrf())
-                                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                                .param("title", "제목")
-                                .param("content", "내용")
-                ).andExpect(redirectedUrlPattern("**/login"))
+                post("/note").with(csrf())
+                        .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                        .param("title", "제목")
+                        .param("content", "내용")
+        ).andExpect(redirectedUrlPattern("**/login"))
                 .andExpect(status().is3xxRedirection());
     }
 
@@ -96,7 +90,7 @@ class NoticeControllerTest {
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                         .param("title", "제목")
                         .param("content", "내용")
-        ).andExpect(status().isForbidden()); // 접근 거부
+        ).andExpect(status().isForbidden());
     }
 
     @Test
@@ -118,8 +112,8 @@ class NoticeControllerTest {
     void deleteNote_인증없음() throws Exception {
         Note note = noteRepository.save(new Note("제목", "내용", user));
         mockMvc.perform(
-                        delete("/note?id=" + note.getId()).with(csrf())
-                ).andExpect(redirectedUrlPattern("**/login"))
+                delete("/note?id=" + note.getId()).with(csrf())
+        ).andExpect(redirectedUrlPattern("**/login"))
                 .andExpect(status().is3xxRedirection());
     }
 
@@ -134,6 +128,7 @@ class NoticeControllerTest {
         mockMvc.perform(
                 delete("/note?id=" + note.getId()).with(csrf())
         ).andExpect(redirectedUrl("note")).andExpect(status().is3xxRedirection());
+
     }
 
     @Test
@@ -146,6 +141,8 @@ class NoticeControllerTest {
         Note note = noteRepository.save(new Note("제목", "내용", user));
         mockMvc.perform(
                 delete("/note?id=" + note.getId()).with(csrf()).with(user(admin))
-        ).andExpect(status().isForbidden()); // 접근 거부
+        ).andExpect(status().isForbidden());
     }
+
+
 }
