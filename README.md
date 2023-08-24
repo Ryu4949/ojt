@@ -30,4 +30,5 @@
 |230816|security filter(1) (~ part05_ch03_06)|redux 적용, webpack(1) (~ part06_ch01_06)|
 |230818|security filter(2), security config (~ part05_ch04_03)|webpack(2) (~ part06_ch01_13)|
 |230821|security, jwt(~ part05_ch06_02)|react with docker(1) (~ part10_ch01_01)|
-|230823|spring batch(~ part07_02_03)|react with docker(2) (~part10_02_03)|
+|230823|spring batch 기본(1)(~ part07_02_03)|react with docker(2) (~part10_02_03)|
+|230824|spring barch 기본(2)(~ part07_ch03_04)|react with a3, cloudfront (~ part10_ch03_04)|
